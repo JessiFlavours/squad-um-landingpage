@@ -29,3 +29,4 @@ Se você deseja visualizar o site no seu próprio computador, siga os passos aba
    ```
 2. Navegue até a pasta do projeto.
 3. Dê dois cliques no arquivo `index.html` para abri-lo diretamente no seu navegador.
+4. Seja feliz.
