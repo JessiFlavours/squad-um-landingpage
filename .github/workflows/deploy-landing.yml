@@ -18,38 +18,57 @@ jobs:
     defaults:
       run:
         working-directory: ./landing
-
+        
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-          cache-dependency-path: landing/package-lock.json
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+        cache-dependency-path: landing/package-lock.json
 
-      - name: Install dependencies
-        working-directory: ./landing
-        run: npm ci
+    - name: Install dependencies
+      working-directory: ./landing
+      run: npm ci
 
-      - name: Run tests
-        working-directory: ./landing
-        run: npm test
+    - name: Run tests
+      working-directory: ./landing
+      run: npm test
 
-      - name: Build
-        working-directory: ./landing
-        run: npm run build
-        env:
-          PUBLIC_APP_URL: ${{ secrets.PUBLIC_APP_URL }}
+    - name: Build
+      working-directory: ./landing
+      run: npm run build
+      env:
+        PUBLIC_APP_URL: ${{ secrets.PUBLIC_APP_URL }}
 
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: landing-dist
-          path: ./landing/dist/
-          if-no-files-found: error
+    - name: Check generated files
+      run: |
+        echo "=== ROOT ==="
+        pwd
+        ls -la
+
+        echo "=== LANDING ==="
+        ls -la ./landing
+
+        echo "=== DIST ==="
+        if [ -d "./landing/dist" ]; then
+          ls -la ./landing/dist
+        else
+          echo "ERRO: landing/dist NÃO EXISTE"
+        fi
+
+        echo "=== PROCURANDO DIST ==="
+        find . -type d -name "dist" -not -path "./.git/*"
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: landing-dist
+        path: ./landing/dist/
+        if-no-files-found: error
 
   cd:
     name: CD — Deploy to Netlify
