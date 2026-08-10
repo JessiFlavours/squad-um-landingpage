@@ -44,32 +44,12 @@ jobs:
       env:
         PUBLIC_APP_URL: ${{ secrets.PUBLIC_APP_URL }}
 
-    - name: Check generated files
-      run: |
-        echo "=== ROOT ==="
-        pwd
-        ls -la
-
-        echo "=== LANDING ==="
-        ls -la ./landing
-
-        echo "=== DIST ==="
-        if [ -d "./landing/dist" ]; then
-          ls -la ./landing/dist
-        else
-          echo "ERRO: landing/dist NÃO EXISTE"
-        fi
-
-        echo "=== PROCURANDO DIST ==="
-        find . -type d -name "dist" -not -path "./.git/*"
-
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
         name: landing-dist
         path: ./landing/dist/
-        if-no-files-found: error
-
+  
   cd:
     name: CD — Deploy to Netlify
     needs: ci
@@ -84,11 +64,11 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: landing-dist
-          path: landing/dist/
+      # - name: Download build artifact
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: landing-dist
+      #     path: landing/dist/
 
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
