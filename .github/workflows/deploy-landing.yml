@@ -45,7 +45,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: landing-dist
-          path: landing/dist/
+          path: ./landing/dist/
+          if-no-files-found: error
 
   cd:
     name: CD — Deploy to Netlify
