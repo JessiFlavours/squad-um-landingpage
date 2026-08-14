@@ -1,110 +1,246 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEMODAY - Squad 1 - Nome do Projeto</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-
-    <!-- NAV BAR -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md shadow-sm z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="text-xl font-bold text-blue-600">DEMODAY - Squad 1</span>
-            <div class="space-x-6 font-medium">
-                <a href="#inicio" class="hover:text-blue-600 transition">Início</a>
-                <a href="#sobre" class="hover:text-blue-600 transition">Sobre</a>
-                <a href="#integrantes" class="hover:text-blue-600 transition">Integrantes</a>
-            </div>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centro Universitário JJK</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <div class="brand-block">
+          <div class="brand-mark">JJK</div>
+          <div>
+            <p class="brand-name">Centro Universitário JJK</p>
+            <span class="brand-subtitle">Portal acadêmico</span>
+          </div>
         </div>
-    </nav>
 
-    <!-- HERO SECTION -->
-    <section id="inicio" class="pt-32 pb-20 px-6 bg-gradient-to-b from-blue-50 to-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-                A importância do DevOps
-            </h1>
-            <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Uma breve descrição ou subtítulo explicando o objetivo principal da pesquisa, projeto ou aplicação desenvolvida pelo grupo.
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#cursos">Cursos</a>
+          <a href="#integrantes">Equipe</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-ghost" href="#matriculas">Portal do aluno</a>
+          <a class="btn btn-primary" href="#matriculas">Matrículas abertas</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero-section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Educação de excelência</span>
+            <h1>Seu futuro começa em um campus pensado para transformar ideias em carreira.</h1>
+            <p>
+              Desde 2016, o Centro Universitário JJK tem ajudado estudantes a construir trajetórias fortes,
+              com ensino de qualidade, corpo docente experiente e uma formação voltada para o mercado.
+              Temos instituições no Ceará, Rio Grande do Sul e São Paulo. Venha fazer parte dessa história!
             </p>
-            <a href="#sobre" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition inline-block">
-                Saiba Mais
-            </a>
-        </div>
-    </section>
-
-    <!-- SOBRE O PROJETO -->
-    <section id="sobre" class="py-20 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Sobre o Projeto</h2>
-            <div class="w-16 h-1 bg-blue-600 mx-auto rounded"></div>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Card 1 -->
-            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition">
-                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-bold text-xl mb-6">01</div>
-                <h3 class="text-xl font-bold mb-3">Problema</h3>
-                <p class="text-gray-600 leading-relaxed text-sm">Explique qual problema ou cenário o trabalho do grupo buscou analisar ou resolver.</p>
-            </div>
-            <!-- Card 2 -->
-            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition">
-                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-bold text-xl mb-6">02</div>
-                <h3 class="text-xl font-bold mb-3">Metodologia</h3>
-                <p class="text-gray-600 leading-relaxed text-sm">Descreva brevemente os métodos, ferramentas ou pesquisas utilizadas pela equipe.</p>
-            </div>
-            <!-- Card 3 -->
-            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition">
-                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-bold text-xl mb-6">03</div>
-                <h3 class="text-xl font-bold mb-3">Resultados</h3>
-                <p class="text-gray-600 leading-relaxed text-sm">Apresente as conclusões, dados obtidos ou o impacto final do projeto entregue.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTEGRANTES -->
-    <section id="integrantes" class="py-20 px-6 bg-gray-100">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Integrantes do Grupo</h2>
-                <div class="w-16 h-1 bg-blue-600 mx-auto rounded"></div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#matriculas">Quero me matricular</a>
+              <a class="btn btn-secondary" href="#sobre">Conhecer a instituição</a>
             </div>
 
-            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 justify-center">
-                <!-- Integrante 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center border border-gray-200">
-                    <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-600 font-bold text-xl">I1</div>
-                    <h4 class="font-bold text-gray-900">Jax Rocha</h4>
-                    <p class="text-sm text-gray-500 mt-1">RA: 12345678</p>
-                </div>
-                <!-- Integrante 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center border border-gray-200">
-                    <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-600 font-bold text-xl">I2</div>
-                    <h4 class="font-bold text-gray-900">Jéssica Dourado</h4>
-                    <p class="text-sm text-gray-500 mt-1">RA: 12345678</p>
-                </div>
-                <!-- Integrante 3 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center border border-gray-200">
-                    <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-600 font-bold text-xl">I3</div>
-                    <h4 class="font-bold text-gray-900">Keila Silva</h4>
-                    <p class="text-sm text-gray-500 mt-1">RA: 12345678</p>
-                </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-sm text-center border border-gray-200">
-                    <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center text-gray-600 font-bold text-xl"></div>
-                    <h4 class="font-bold text-gray-900"></h4>
-                    <p class="text-sm text-gray-500 mt-1"></p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <ul class="hero-list">
+              <li>+10 anos de história</li>
+              <li>+12 mil alunos ativos</li>
+              <li>Presença em 3 estados</li>
+            </ul>
+          </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm px-6">
-        <p>&copy; 2026 - Trabalho Acadêmico apresentado à Instituição de Ensino. Todos os direitos reservados.</p>
+          <aside class="hero-panel" aria-label="Resumo acadêmico">
+            <div class="panel-top">
+              <div>
+                <span class="label-mini">Semestre vigente</span>
+                <strong>2026.2</strong>
+              </div>
+              <span class="status-pill">Ativo</span>
+            </div>
+
+            <div class="panel-stats">
+              <div class="mini-stat">
+                <span>Alunos</span>
+                <strong>12.4k</strong>
+              </div>
+              <div class="mini-stat">
+                <span>Cursos</span>
+                <strong>28</strong>
+              </div>
+              <div class="mini-stat">
+                <span>Docentes</span>
+                <strong>320</strong>
+              </div>
+            </div>
+
+            <div class="next-class">
+              <p class="label-mini">Próxima aula</p>
+              <h3>DevOps 1</h3>
+              <div class="class-meta">
+                <span>Segunda, 08:00</span>
+                <span>Sala A-204</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="stats-bar">
+        <div class="container stats-grid">
+          <div class="stat-item">
+            <strong>91%</strong>
+            <span>de empregabilidade</span>
+          </div>
+          <div class="stat-item">
+            <strong>18</strong>
+            <span>campi e polos</span>
+          </div>
+          <div class="stat-item">
+            <strong>14</strong>
+            <span>áreas de conhecimento</span>
+          </div>
+          <div class="stat-item">
+            <strong>24h</strong>
+            <span>atendimento acadêmico</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow eyebrow-dark">Sobre a instituição</span>
+            <h2>Uma universidade construída com foco no aluno e na excelência.</h2>
+          </div>
+
+          <div class="card-grid three-col">
+            <article class="info-card">
+              <div class="card-number">01</div>
+              <h3>Missão</h3>
+              <p>Educar para o sucesso profissional, promovendo experiências que transformem vidas e ampliem oportunidades.</p>
+            </article>
+
+            <article class="info-card">
+              <div class="card-number">02</div>
+              <h3>Visão</h3>
+              <p>Ser referência em formação acadêmica, inovação e desenvolvimento humano em nível nacional.</p>
+            </article>
+
+            <article class="info-card">
+              <div class="card-number">03</div>
+              <h3>Valores</h3>
+              <p>Acolhimento, credibilidade, compromisso com resultados, respeito às pessoas e foco em qualidade.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="cursos" class="section section-alt">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow eyebrow-dark">Cursos em destaque</span>
+            <h2>Áreas que conectam conhecimento, tecnologia e mercado.</h2>
+          </div>
+
+          <div class="card-grid four-col">
+            <article class="course-card">
+              <span class="course-tag">Tecnologia</span>
+              <h3>Engenharia de Software</h3>
+              <p>Aprenda a desenvolver soluções digitais com foco em inovação, arquitetura e experiência do usuário.</p>
+              <a href="#matriculas">Saiba mais</a>
+            </article>
+
+            <article class="course-card">
+              <span class="course-tag">Saúde</span>
+              <h3>Biomedicina</h3>
+              <p>Formação científica e prática para atuar em diagnósticos, pesquisa aplicada e inovação em saúde.</p>
+              <a href="#matriculas">Saiba mais</a>
+            </article>
+
+            <article class="course-card">
+              <span class="course-tag">Negócios</span>
+              <h3>Administração</h3>
+              <p>Desenvolva visão estratégica, gestão de pessoas e capacidade de liderar negócios sustentáveis.</p>
+              <a href="#matriculas">Saiba mais</a>
+            </article>
+
+            <article class="course-card">
+              <span class="course-tag">Design</span>
+              <h3>Publicidade e Propaganda</h3>
+              <p>Crie campanhas, conceitos e marcas com pensamento estratégico, criatividade e análise de dados.</p>
+              <a href="#matriculas">Saiba mais</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="integrantes" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow eyebrow-dark">Quem lidera a instituição</span>
+            <h2>Uma equipe comprometida com a formação de pessoas e de futuro.</h2>
+          </div>
+
+          <div class="card-grid four-col staff-grid">
+            <article class="member-card">
+              <div class="member-avatar">JR</div>
+              <h3>Jax Rocha</h3>
+              <p>Reitor</p>
+            </article>
+
+            <article class="member-card">
+              <div class="member-avatar">JD</div>
+              <h3>Jéssica Dourado</h3>
+              <p>Gestora acadêmica</p>
+            </article>
+
+            <article class="member-card">
+              <div class="member-avatar">KS</div>
+              <h3>Keila Silva</h3>
+              <p>Diretora de ensino</p>
+            </article>
+
+            <article class="member-card">
+              <div class="member-avatar">+</div>
+              <h3>Equipe</h3>
+              <p>Coordenação geral</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="matriculas">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-brand">Centro Universitário JJK</p>
+          <p>Formando profissionais com propósito, conhecimento e responsabilidade social.</p>
+        </div>
+
+        <div>
+          <h4>Atalhos</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#integrantes">Equipe</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contato</h4>
+          <ul>
+            <li>atendimento@jkk.edu.br</li>
+            <li>(85) 4000-2026</li>
+            <li>Campus Central</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Centro Universitário JJK. Todos os direitos reservados.</div>
     </footer>
-
-</body>
+  </body>
 </html>
