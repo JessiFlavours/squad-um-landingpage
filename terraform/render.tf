@@ -1,7 +1,3 @@
-# --------------------------------------------------------
-# Configuração do Web Service da API no Render
-# --------------------------------------------------------
-
 resource "render_web_service" "tasks_api" {
   name          = "tasks-colaborativas"
   plan          = "free"
@@ -16,10 +12,11 @@ resource "render_web_service" "tasks_api" {
   }
 
   env_vars = {
-    DATABASE_URL      = { value = aiven_mysql.tasks_db.service_host }
-    DATABASE_NAME     = { value = aiven_mysql_database.tasks_colaborativas.database_name }
-    DATABASE_USER     = { value = aiven_mysql.tasks_db.service_username }
-    DATABASE_PASSWORD = { value = aiven_mysql.tasks_db.service_password }
+    DATABASE_URL      = { value = var.database_host }
+    DATABASE_PORT     = { value = var.database_port }
+    DATABASE_NAME     = { value = var.database_name }
+    DATABASE_USER     = { value = var.database_user }
+    DATABASE_PASSWORD = { value = var.database_password }
     DATABASE_CHARSET  = { value = "utf8mb4" }
     JWT_SECRET        = { value = var.jwt_secret }
   }
