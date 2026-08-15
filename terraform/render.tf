@@ -12,7 +12,7 @@ resource "render_web_service" "tasks_api" {
 
   env_vars = {
     DATABASE_URL      = { value = aiven_mysql.tasks_db.service_host }
-    DATABASE_NAME     = { value = aiven_database.tasks_colaborativas.database_name }
+    DATABASE_NAME     = { value = aiven_mysql_database.tasks_colaborativas.database_name }
     DATABASE_USER     = { value = aiven_mysql.tasks_db.service_username }
     DATABASE_PASSWORD = { value = aiven_mysql.tasks_db.service_password }
     DATABASE_CHARSET  = { value = "utf8mb4" }
