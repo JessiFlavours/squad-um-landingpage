@@ -8,6 +8,7 @@ terraform {
     }
     render = {
       source  = "render-oss/render"
+      owner_id = var.render_owner_id 
       version = "~> 1.0"
     }
   }
