@@ -19,5 +19,6 @@ resource "render_web_service" "tasks_api" {
     DATABASE_PASSWORD = { value = aiven_mysql.tasks_db.service_password }
     DATABASE_CHARSET  = { value = "utf8mb4" }
     JWT_SECRET        = { value = var.jwt_secret }
+    PORT              = { value = "80" }
   }
 }
