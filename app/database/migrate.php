@@ -6,15 +6,23 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->safeLoad();
 
 $host    = $_ENV['DATABASE_URL'];
+$port    = $_ENV['DATABASE_PORT'] ?? '3306';
 $dbname  = $_ENV['DATABASE_NAME'];
 $user    = $_ENV['DATABASE_USER'];
 $pass    = $_ENV['DATABASE_PASSWORD'];
 $charset = $_ENV['DATABASE_CHARSET'] ?? 'utf8mb4';
 
 try {
-    $pdo = new PDO("mysql:host=$host;charset=$charset", $user, $pass, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    ]);
+    $pdo = new PDO(
+        "mysql:host=$host;port=$port;charset=$charset",
+        $user,
+        $pass,
+        [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::MYSQL_ATTR_SSL_CA => null,
+            PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
+        ]
+    );
 
     $pdo->exec("CREATE DATABASE IF NOT EXISTS `$dbname` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
     echo "Banco '$dbname' pronto\n";

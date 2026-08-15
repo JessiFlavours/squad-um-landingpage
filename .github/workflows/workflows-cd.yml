@@ -35,6 +35,9 @@ jobs:
           TF_VAR_render_owner_id: ${{ secrets.RENDER_OWNER_ID }}
           TF_VAR_dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
           TF_VAR_jwt_secret: ${{ secrets.JWT_SECRET }}
+          TF_VAR_database_host: ${{ secrets.DATABASE_HOST }}
+          TF_VAR_database_user: ${{ secrets.DATABASE_USER }}
+          TF_VAR_database_password: ${{ secrets.DATABASE_PASSWORD }}
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
@@ -45,3 +48,6 @@ jobs:
           TF_VAR_render_owner_id: ${{ secrets.RENDER_OWNER_ID }}
           TF_VAR_dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
           TF_VAR_jwt_secret: ${{ secrets.JWT_SECRET }}
+          TF_VAR_database_host: ${{ secrets.DATABASE_HOST }}
+          TF_VAR_database_user: ${{ secrets.DATABASE_USER }}
+          TF_VAR_database_password: ${{ secrets.DATABASE_PASSWORD }}

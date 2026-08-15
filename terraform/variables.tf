@@ -25,6 +25,35 @@ variable "dockerhub_username" {
   type        = string
 }
 
+variable "database_host" {
+  description = "Host do MySQL criado manualmente no Console do Aiven"
+  type        = string
+}
+
+variable "database_port" {
+  description = "Porta do MySQL no Aiven (não é a 3306 padrão)"
+  type        = string
+  default     = "21903"
+}
+
+variable "database_name" {
+  description = "Nome do banco (criado manualmente no Console do Aiven)"
+  type        = string
+  default     = "tasks_colaborativas"
+}
+
+variable "database_user" {
+  description = "Usuário do MySQL criado manualmente no Console do Aiven"
+  type        = string
+  default     = "avnadmin"
+}
+
+variable "database_password" {
+  description = "Senha do MySQL criado manualmente no Console do Aiven"
+  type        = string
+  sensitive   = true
+}
+
 variable "jwt_secret" {
   description = "Chave usada pra assinar os tokens JWT em produção"
   type        = string
