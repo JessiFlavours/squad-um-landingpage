@@ -22,6 +22,4 @@ class HomeController extends Controller
     {
         $this->view('users/index');
     }
-
-
 }

@@ -47,10 +47,14 @@ class Router
         $string_url = $request->query->get('url', '');
         $uri = '/' . trim($string_url, '/');
         foreach ($this->routes as $route) {
-            if ($route['method'] !== $method) continue;
+            if ($route['method'] !== $method) {
+                continue;
+            }
 
             $params = $this->matchRoute($route['path'], $uri);
-            if ($params === null) continue;
+            if ($params === null) {
+                continue;
+            }
 
             $controllerClass = 'App\\Controllers\\' . $route['controller'];
 

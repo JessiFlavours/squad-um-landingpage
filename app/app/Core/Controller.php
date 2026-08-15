@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Core;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -9,12 +10,12 @@ class Controller
 {
     protected Request $request;
 
-    public function setRequest(Request $request) : void
+    public function setRequest(Request $request): void
     {
         $this->request = $request;
     }
 
-    protected function view(string $view, array $viewData = []) : void
+    protected function view(string $view, array $viewData = []): void
     {
         extract($viewData);
         $viewFile = __DIR__ . '/../views/' . $view . '.php';
@@ -24,18 +25,17 @@ class Controller
         require_once $viewFile;
     }
 
-    protected function json(array $data, int $statusCode = 200) : void
+    protected function json(array $data, int $statusCode = 200): void
     {
         $response = new JsonResponse($data, $statusCode);
         $response->send();
         exit;
     }
 
-    protected function redirect(string $url, int $statusCode = 302) : never
+    protected function redirect(string $url, int $statusCode = 302): never
     {
         $response = new RedirectResponse($url, $statusCode);
         $response->send();
         exit;
     }
 }
-?>

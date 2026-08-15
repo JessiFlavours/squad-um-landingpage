@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Core\Database;
-
 use App\Core\Model;
 
 class Usuario extends Model
@@ -66,7 +65,9 @@ class Usuario extends Model
             $params[':senha'] = password_hash($dados['senha'], PASSWORD_BCRYPT);
         }
 
-        if (empty($campos)) return false;
+        if (empty($campos)) {
+            return false;
+        }
 
         return $this->db->execute(
             "UPDATE usuarios SET " . implode(', ', $campos) . " WHERE id = :id",

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Core;
 
 class Database
@@ -19,7 +20,7 @@ class Database
         return self::$instance;
     }
 
-    function connect() : bool 
+    function connect(): bool
     {
         $databaseConfig = config('database');
 
@@ -54,7 +55,7 @@ class Database
         return $stmt->fetchAll();
     }
 
-    // retorna o rowCount 
+    // retorna o rowCount
     public function execute(string $sql, array $params = []): bool
     {
         $stmt = $this->query($sql, $params);
@@ -78,4 +79,3 @@ class Database
         }
     }
 }
-?>
