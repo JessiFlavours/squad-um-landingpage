@@ -7,8 +7,8 @@ resource "aiven_mysql" "tasks_db" {
 }
 
 # Banco de dados dentro do serviço
-resource "aiven_database" "tasks_colaborativas" {
-  project      = var.aiven_project
-  service_name = aiven_mysql.tasks_db.service_name
+resource "aiven_mysql_database" "tasks_colaborativas" {
+  project       = var.aiven_project
+  service_name  = aiven_mysql.tasks_db.service_name
   database_name = "tasks_colaborativas"
 }
