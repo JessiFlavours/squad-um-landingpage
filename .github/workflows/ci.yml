@@ -1,0 +1,96 @@
+name: CI - Build e Push Docker Hub
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer
+
+      - name: Instalar dependências
+        working-directory: ./app
+        run: composer install --prefer-dist --no-progress
+
+      - name: Rodar lint (PHP_CodeSniffer)
+        working-directory: ./app
+        run: |
+          if [ -f vendor/bin/phpcs ]; then
+            vendor/bin/phpcs --standard=PSR12 app/
+          else
+            echo "PHP_CodeSniffer não instalado, pulando lint"
+          fi
+
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: tasks_colaborativas_test
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: pdo_mysql
+          tools: composer
+
+      - name: Instalar dependências
+        working-directory: ./app
+        run: composer install --prefer-dist --no-progress
+
+      - name: Rodar testes (PHPUnit)
+        working-directory: ./app
+        env:
+          DATABASE_URL: 127.0.0.1
+          DATABASE_NAME: tasks_colaborativas_test
+          DATABASE_USER: root
+          DATABASE_PASSWORD: root
+        run: vendor/bin/phpunit
+
+  build-and-push:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login no Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build e push da imagem
+        uses: docker/build-push-action@v6
+        with:
+          context: ./app
+          push: true
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/tasks-colaborativas:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/tasks-colaborativas:${{ github.sha }}
