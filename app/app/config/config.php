@@ -2,11 +2,11 @@
 
 return [
     'database' => [
-        'host' => $_ENV['DATABASE_URL'] ?? 'localhost',
-        'port' => $_ENV['DATABASE_PORT'] ?? '3306',
-        'dbname' => $_ENV['DATABASE_NAME'] ?? '',
-        'username' => $_ENV['DATABASE_USER'] ?? '',
-        'password' => $_ENV['DATABASE_PASSWORD'] ?? '',
-        'charset' => $_ENV['DATABASE_CHARSET'] ?? '',
+        'host' => getenv('DATABASE_URL') ?: 'localhost',
+        'port' => getenv('DATABASE_PORT') ?: '3306',
+        'dbname' => getenv('DATABASE_NAME') ?: '',
+        'username' => getenv('DATABASE_USER') ?: '',
+        'password' => getenv('DATABASE_PASSWORD') ?: '',
+        'charset' => getenv('DATABASE_CHARSET') ?: '',
     ]
 ];
