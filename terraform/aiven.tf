@@ -1,8 +1,7 @@
 # Serviço MySQL gerenciado no Aiven
 resource "aiven_mysql" "tasks_db" {
   project      = var.aiven_project
-  cloud_name   = "google-europe-west3" # troque pela região mais próxima, se quiser
-  plan         = "free"
+  plan         = "free-1-1gb"
   service_name = "tasks-colaborativas-mysql"
 }
 
