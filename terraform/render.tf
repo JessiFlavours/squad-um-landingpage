@@ -2,7 +2,7 @@ resource "render_web_service" "tasks_api" {
   name          = "tasks-colaborativas"
   plan          = "free"
   region        = "oregon"
-  start_command = "php database/migrate.php; /usr/local/bin/apache2-foreground"
+  start_command = "sh -c \"php database/migrate.php && apache2-foreground\""
 
   runtime_source = {
     image = {
