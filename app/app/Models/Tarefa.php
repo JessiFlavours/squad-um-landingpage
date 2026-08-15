@@ -3,12 +3,11 @@
 namespace App\Models;
 
 use App\Core\Model;
-use App\Core\Database; 
+use App\Core\Database;
 
 class Tarefa extends Model
 {
-
-public function __construct(?Database $db = null)
+    public function __construct(?Database $db = null)
     {
         if ($db !== null) {
             $this->db = $db;
@@ -121,7 +120,9 @@ public function __construct(?Database $db = null)
                 : null;
         }
 
-        if (empty($campos)) return false;
+        if (empty($campos)) {
+            return false;
+        }
 
         $campos[] = 'updated_at = NOW()';
 
