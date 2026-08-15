@@ -6,7 +6,8 @@ resource "render_web_service" "tasks_api" {
 
   runtime_source = {
     image = {
-      image_url = "docker.io/${var.dockerhub_username}/tasks-colaborativas:latest"
+      image_url = "docker.io/${var.dockerhub_username}/tasks-colaborativas"
+      tag       = "latest"
     }
   }
 
