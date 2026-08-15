@@ -1,7 +1,12 @@
+# --------------------------------------------------------
+# Configuração do Web Service da API no Render
+# --------------------------------------------------------
+
 resource "render_web_service" "tasks_api" {
   name          = "tasks-colaborativas"
   plan          = "free"
   region        = "oregon"
+  owner_id      = var.render_owner_id  # Aqui está a chave que faltava para a conta do Render!
   start_command = "php database/migrate.php && apache2-foreground"
 
   runtime_source = {
