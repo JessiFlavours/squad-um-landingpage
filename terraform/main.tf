@@ -1,0 +1,22 @@
+terraform {
+  required_version = ">= 1.5"
+
+  required_providers {
+    aiven = {
+      source  = "aiven/aiven"
+      version = "~> 4.0"
+    }
+    render = {
+      source  = "render-oss/render"
+      version = "~> 1.0"
+    }
+  }
+}
+
+provider "aiven" {
+  api_token = var.aiven_api_token
+}
+
+provider "render" {
+  api_key = var.render_api_key
+}
