@@ -5,12 +5,12 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->safeLoad();
 
-$host    = $_ENV['DATABASE_URL'];
-$port    = $_ENV['DATABASE_PORT'] ?? '3306';
-$dbname  = $_ENV['DATABASE_NAME'];
-$user    = $_ENV['DATABASE_USER'];
-$pass    = $_ENV['DATABASE_PASSWORD'];
-$charset = $_ENV['DATABASE_CHARSET'] ?? 'utf8mb4';
+$host    = getenv('DATABASE_URL');
+$port    = getenv('DATABASE_PORT') ?: '3306';
+$dbname  = getenv('DATABASE_NAME');
+$user    = getenv('DATABASE_USER');
+$pass    = getenv('DATABASE_PASSWORD');
+$charset = getenv('DATABASE_CHARSET') ?: 'utf8mb4';
 
 try {
     $pdo = new PDO(
