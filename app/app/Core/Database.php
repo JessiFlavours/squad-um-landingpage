@@ -20,11 +20,13 @@ class Database
         return self::$instance;
     }
 
-    function connect(): bool
+    public function connect(): bool
     {
         $databaseConfig = config('database');
 
-        $dsn = "mysql:host={$databaseConfig['host']};dbname={$databaseConfig['dbname']};charset={$databaseConfig['charset']}";
+        $dsn = "mysql:host={$databaseConfig['host']};"
+            . "dbname={$databaseConfig['dbname']};"
+            . "charset={$databaseConfig['charset']}";
         $username = $databaseConfig['username'];
         $password = $databaseConfig['password'];
 

@@ -11,24 +11,24 @@ class Bootstrap
     public function run(): void
     {
         $request = Request::createFromGlobals();
-        $this->environment_configure();
+        $this->environmentConfigure();
         $this->configure();
         $this->callRouter($request);
     }
 
     private function configure()
     {
-        $this->init_configure();
-        $this->timezone_configure();
+        $this->initConfigure();
+        $this->timezoneConfigure();
     }
 
-    private function init_configure()
+    private function initConfigure()
     {
         ini_set('display_errors', '1');
         ini_set('default_charset', 'UTF-8');
     }
 
-    private function timezone_configure()
+    private function timezoneConfigure()
     {
         date_default_timezone_set(config('app.timezone', 'UTC'));
     }
@@ -40,7 +40,7 @@ class Bootstrap
         $router->dispatch($request);
     }
 
-    private function environment_configure()
+    private function environmentConfigure()
     {
         $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
         $dotenv->load();
