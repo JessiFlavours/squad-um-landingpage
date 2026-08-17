@@ -71,13 +71,17 @@ flowchart TD
 ### Executando com Docker Compose
 
 1. Clone o repositório:
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+```bash
+git clone https://github.com/JessiFlavours/squad-um-landingpage.git
+cd squad-um-landingpage
+```
 
-2. Suba o ambiente de desenvolvimento:
+3. Suba o ambiente de desenvolvimento:
+```bash
 docker compose up -d --build
+```
 
-3. Acesse a aplicação no navegador através do endereço http://localhost:8080.
+5. Acesse a aplicação no navegador através do endereço http://localhost:8080.
 
 ---
 
@@ -86,16 +90,24 @@ docker compose up -d --build
 O diretório terraform/ gerencia o banco de dados MySQL hospedado na plataforma Aiven.
 
 1. Acesse o diretório de infraestrutura:
+```bash
 cd terraform
+```
 
-2. Inicialize os providers:
+3. Inicialize os providers:
+```bash
 terraform init
+```
 
-3. Valide o planejamento de recursos:
+5. Valide o planejamento de recursos:
+```bash
 terraform plan
+```
 
-4. Aplique o provisionamento:
+7. Aplique o provisionamento:
+```bash
 terraform apply
+```
 
 ---
 
