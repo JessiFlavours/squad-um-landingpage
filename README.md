@@ -23,20 +23,27 @@ Projeto desenvolvido pela Squad 1 durante o Bootcamp de DevOps da Atlântico Ava
 
 ## Estrutura do Repositório
 
-.
-├── .github/
-│   └── workflows/
-│       └── ci-cd.yml
-├── app/
-├── terraform/
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-│   └── provider.tf
-├── Dockerfile
-├── docker-compose.yml
-└── README.md
-
+```mermaid
+flowchart TD
+    root["collaborative-task-manager/"]
+    
+    root --> github[".github/"]
+    github --> workflows["workflows/"]
+    workflows --> cicd["ci-cd.yml"]
+    
+    root --> app["app/"]
+    app --> src["Código-fonte da aplicação"]
+    
+    root --> terraform["terraform/"]
+    terraform --> main["main.tf"]
+    terraform --> variables["variables.tf"]
+    terraform --> outputs["outputs.tf"]
+    terraform --> provider["provider.tf"]
+    
+    root --> dockerfile["Dockerfile"]
+    root --> compose["docker-compose.yml"]
+    root --> readme["README.md"]
+```
 ---
 
 ## Pilares DevOps e Práticas Implementadas
