@@ -12,7 +12,7 @@ Projeto desenvolvido pela Squad 1 durante o Bootcamp de DevOps da Atlântico Ava
 ## Arquitetura e Tecnologias
 
 * **Aplicação Backend:** PHP (Apache) com MySQL
-* **Landing Page:** HTML5, CSS3 e JavaScript
+* **Landing Page:** HTML5, CSS3
 * **Controle de Versão:** Git & GitHub
 * **Conteinerização:** Docker & Docker Compose
 * **Infraestrutura como Código (IaC):** Terraform
