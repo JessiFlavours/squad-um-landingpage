@@ -5,33 +5,13 @@ on:
     branches: [main, master]
   workflow_dispatch:
 
-env:
-  NODE_VERSION: '20'
-
 jobs:
   deploy:
-    name: Build & Deploy to Netlify
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./landing
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Install dependencies & Build
-        run: |
-          npm ci
-          npm run build
-        env:
-          PUBLIC_APP_URL: ${{ secrets.PUBLIC_APP_URL }}
-
       - name: Deploy to Netlify
         run: |
-          npx netlify-cli deploy --dir=dist --prod --auth="${{ secrets.NETLIFY_AUTH_TOKEN }}" --site="${{ secrets.NETLIFY_SITE_ID }}"
+          npx netlify-cli deploy --dir=./landing --prod --auth="${{ secrets.NETLIFY_AUTH_TOKEN }}" --site="${{ secrets.NETLIFY_SITE_ID }}"
