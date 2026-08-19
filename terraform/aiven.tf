@@ -9,5 +9,5 @@ resource "aiven_mysql" "tasks_db" {
 resource "aiven_mysql_database" "tasks_colaborativas" {
   project       = var.aiven_project
   service_name  = aiven_mysql.tasks_db.service_name
-  database_name = "tasks_colaborativas"
+  database_name = "db_tasks_colaborativas"
 }

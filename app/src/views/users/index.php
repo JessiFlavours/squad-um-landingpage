@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão de Usuários - Tasks Colaborativas</title>
-    <link rel="stylesheet" href="/app/views/users/style.css">
+    <link rel="stylesheet" href="/src/views/users/style.css">
 </head>
 
 <body>

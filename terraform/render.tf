@@ -2,7 +2,7 @@ resource "render_web_service" "tasks_api" {
   name          = "tasks-colaborativas"
   plan          = "free"
   region        = "oregon"
-  start_command = "sh start.sh"
+  start_command = "sh entrypoint.sh"
 
   runtime_source = {
     image = {

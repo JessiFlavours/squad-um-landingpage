@@ -6,12 +6,12 @@
         }
     ],
     "autoload": {
-        "psr-4": {
-            "App\\": "app/"
-        },
         "files": [
-            "app/Core/functions.php"
-        ]
+            "src/Core/functions.php"
+        ],
+        "psr-4": {
+            "App\\": "src/"
+        }
     },
     "autoload-dev": {
         "psr-4": {

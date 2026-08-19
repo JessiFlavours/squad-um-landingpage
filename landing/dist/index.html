@@ -3,29 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Tasks Colaborativas — organize tarefas, acompanhe projetos e trabalhe melhor em equipe.">
-
+    <meta name="description" content="Tasks Colaborativas — organize tarefas, acompanhe projetos e trabalhe melhor em equipe.">
     <title>Tasks Colaborativas | Organize. Colabore. Conclua.</title>
-
-    <link rel="stylesheet" href="style.css">
-
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- ================= HEADER ================= -->
-
+    <!-- ================= HEADER / NAVBAR ================= -->
     <header class="header">
-        <div class="container nav">
-
+        <div class="container nav-container">
             <a href="#" class="logo">
                 <span class="logo-icon">✓</span>
                 <span>Tasks<span class="logo-highlight">Colaborativas</span></span>
@@ -37,691 +29,191 @@
                 <a href="#beneficios">Benefícios</a>
             </nav>
 
-            <a
-                href="https://tasks-colaborativas.onrender.com/home/tasks"
-                class="btn btn-outline"
-            >
+            <a href="https://tasks-colaborativas.onrender.com/home/tasks" class="btn btn-outline">
                 Entrar
             </a>
-
         </div>
     </header>
 
-
-    <main>
-
+    <main class="main-content">
+        
         <!-- ================= HERO ================= -->
-
-        <section class="hero">
-
+        <section class="hero-section">
             <div class="hero-background"></div>
-
-            <div class="container hero-content">
-
-                <div class="hero-text">
-
-                    <div class="badge">
-                        <span class="badge-dot"></span>
-                        Organização que aproxima equipes
-                    </div>
-
-                    <h1>
-                        Organize suas tarefas.
-                        <span>Trabalhe melhor em equipe.</span>
-                    </h1>
-
-                    <p>
-                        Uma plataforma simples e colaborativa para criar,
-                        organizar e acompanhar tarefas em um único lugar.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a
-                            href="https://tasks-colaborativas.onrender.com/home/tasks"
-                            class="btn btn-primary"
-                        >
-                            Começar agora
-                            <span>→</span>
-                        </a>
-
-                        <a href="#como-funciona" class="btn btn-secondary">
-                            Como funciona
-                        </a>
-
-                    </div>
-
-                    <div class="hero-info">
-
-                        <div class="info-item">
-                            <span class="info-icon">✓</span>
-                            <span>Fácil de usar</span>
-                        </div>
-
-                        <div class="info-item">
-                            <span class="info-icon">👥</span>
-                            <span>Feito para equipes</span>
-                        </div>
-
-                        <div class="info-item">
-                            <span class="info-icon">⚡</span>
-                            <span>Mais produtividade</span>
-                        </div>
-
-                    </div>
-
+            <div class="container">
+                <div class="badge">
+                    <span class="badge-dot"></span>
+                    Organização que aproxima equipes
                 </div>
-
-
-                <!-- MOCKUP DO APP -->
-
-                <div class="hero-visual">
-
-                    <div class="dashboard">
-
-                        <div class="dashboard-top">
-
-                            <div class="window-controls">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-
-                            <div class="dashboard-title">
-                                Minhas tarefas
-                            </div>
-
-                        </div>
-
-                        <div class="dashboard-content">
-
-                            <div class="dashboard-header">
-
-                                <div>
-                                    <small>Visão geral</small>
-                                    <h3>Projeto da equipe</h3>
-                                </div>
-
-                                <div class="avatar-group">
-                                    <span>J</span>
-                                    <span>M</span>
-                                    <span>A</span>
-                                    <span>+</span>
-                                </div>
-
-                            </div>
-
-
-                            <div class="progress-box">
-
-                                <div class="progress-info">
-                                    <span>Progresso do projeto</span>
-                                    <strong>68%</strong>
-                                </div>
-
-                                <div class="progress-bar">
-                                    <div class="progress"></div>
-                                </div>
-
-                            </div>
-
-
-                            <div class="task-columns">
-
-                                <div class="task-column">
-
-                                    <div class="column-title">
-                                        <span class="status blue"></span>
-                                        A fazer
-                                        <small>3</small>
-                                    </div>
-
-                                    <div class="task-card">
-                                        <div class="task-tag purple">
-                                            Desenvolvimento
-                                        </div>
-
-                                        <h4>
-                                            Criar página inicial
-                                        </h4>
-
-                                        <div class="task-footer">
-                                            <span>Hoje</span>
-                                            <span class="mini-avatar">J</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="task-card">
-                                        <div class="task-tag orange">
-                                            Design
-                                        </div>
-
-                                        <h4>
-                                            Definir identidade visual
-                                        </h4>
-
-                                        <div class="task-footer">
-                                            <span>Amanhã</span>
-                                            <span class="mini-avatar">M</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="task-column">
-
-                                    <div class="column-title">
-                                        <span class="status yellow"></span>
-                                        Em andamento
-                                        <small>2</small>
-                                    </div>
-
-                                    <div class="task-card highlighted">
-
-                                        <div class="task-tag green">
-                                            Front-end
-                                        </div>
-
-                                        <h4>
-                                            Desenvolver dashboard
-                                        </h4>
-
-                                        <div class="task-footer">
-                                            <span>Hoje</span>
-                                            <span class="mini-avatar">A</span>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="task-card">
-
-                                        <div class="task-tag blue-tag">
-                                            Backend
-                                        </div>
-
-                                        <h4>
-                                            Configurar API
-                                        </h4>
-
-                                        <div class="task-footer">
-                                            <span>20 Ago</span>
-                                            <span class="mini-avatar">J</span>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                                <div class="task-column">
-
-                                    <div class="column-title">
-                                        <span class="status green-status"></span>
-                                        Concluído
-                                        <small>4</small>
-                                    </div>
-
-                                    <div class="task-card completed">
-
-                                        <div class="completed-icon">
-                                            ✓
-                                        </div>
-
-                                        <h4>
-                                            Criar estrutura do projeto
-                                        </h4>
-
-                                        <div class="task-footer">
-                                            <span>Concluído</span>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="task-card completed">
-
-                                        <div class="completed-icon">
-                                            ✓
-                                        </div>
-
-                                        <h4>
-                                            Configurar banco de dados
-                                        </h4>
-
-                                        <div class="task-footer">
-                                            <span>Concluído</span>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="floating-card floating-one">
-                        <span class="floating-icon green-floating">✓</span>
-                        <div>
-                            <strong>Tarefa concluída!</strong>
-                            <small>há poucos segundos</small>
-                        </div>
-                    </div>
-
-                    <div class="floating-card floating-two">
-                        <span class="floating-icon blue-floating">👥</span>
-                        <div>
-                            <strong>Equipe conectada</strong>
-                            <small>4 pessoas online</small>
-                        </div>
-                    </div>
-
+                <h1>
+                    Organize suas tarefas.
+                    <span>Trabalhe melhor em equipe.</span>
+                </h1>
+                <p>
+                    Uma plataforma simples e colaborativa para criar,
+                    organizar e acompanhar tarefas em um único lugar.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://tasks-colaborativas.onrender.com/home/tasks" class="btn btn-primary">
+                        Começar agora <span>→</span>
+                    </a>
+                    <a href="#como-funciona" class="btn btn-secondary">
+                        Como funciona
+                    </a>
                 </div>
-
+                <div class="hero-info">
+                    <div class="info-item">
+                        <span class="info-icon">✓</span> Fácil de usar
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">👥</span> Feito para equipes
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">⚡</span> Mais produtividade
+                    </div>
+                </div>
             </div>
-
         </section>
-
 
         <!-- ================= BENEFÍCIOS ================= -->
-
-        <section class="benefits" id="beneficios">
-
+        <section class="section benefits-section" id="beneficios">
             <div class="container">
-
                 <div class="section-heading">
-
-                    <span class="section-label">
-                        POR QUE USAR?
-                    </span>
-
-                    <h2>
-                        Tudo o que sua equipe precisa
-                        <span>em um só lugar.</span>
-                    </h2>
-
-                    <p>
-                        Simplifique o gerenciamento das atividades e
-                        mantenha todos alinhados com os objetivos do projeto.
-                    </p>
-
+                    <span class="section-label">POR QUE USAR?</span>
+                    <h2>Tudo o que sua equipe precisa <span>em um só lugar.</span></h2>
+                    <p>Simplifique o gerenciamento das atividades e mantenha todos alinhados com os objetivos do projeto.</p>
                 </div>
 
-
-                <div class="benefit-grid">
-
-                    <article class="benefit-card">
-
-                        <div class="benefit-icon purple-icon">
-                            ✓
-                        </div>
-
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-icon purple-icon">✓</div>
                         <h3>Organização</h3>
-
-                        <p>
-                            Crie e organize suas tarefas de forma simples,
-                            mantendo tudo fácil de encontrar e acompanhar.
-                        </p>
-
-                        <a href="#como-funciona">
-                            Saiba mais →
-                        </a>
-
+                        <p>Crie e organize suas tarefas de forma simples, mantendo tudo fácil de encontrar e acompanhar.</p>
+                        <a href="#como-funciona" class="card-link">Saiba mais →</a>
                     </article>
 
-
-                    <article class="benefit-card featured-card">
-
-                        <div class="benefit-icon blue-icon">
-                            👥
-                        </div>
-
+                    <article class="card featured-card">
+                        <div class="card-icon blue-icon">👥</div>
                         <h3>Colaboração</h3>
-
-                        <p>
-                            Trabalhe em equipe, distribua responsabilidades
-                            e acompanhe o progresso das atividades.
-                        </p>
-
-                        <a href="#como-funciona">
-                            Saiba mais →
-                        </a>
-
+                        <p>Trabalhe em equipe, distribua responsabilidades e acompanhe o progresso das atividades.</p>
+                        <a href="#como-funciona" class="card-link">Saiba mais →</a>
                     </article>
 
-
-                    <article class="benefit-card">
-
-                        <div class="benefit-icon orange-icon">
-                            ⚡
-                        </div>
-
+                    <article class="card">
+                        <div class="card-icon orange-icon">⚡</div>
                         <h3>Produtividade</h3>
-
-                        <p>
-                            Tenha uma visão clara do que precisa ser feito
-                            e avance seus projetos com mais eficiência.
-                        </p>
-
-                        <a href="#como-funciona">
-                            Saiba mais →
-                        </a>
-
+                        <p>Tenha uma visão clara do que precisa ser feito e avance seus projetos com mais eficiência.</p>
+                        <a href="#como-funciona" class="card-link">Saiba mais →</a>
                     </article>
-
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- ================= RECURSOS ================= -->
-
-        <section class="features" id="recursos">
-
-            <div class="container features-content">
-
-                <div class="features-text">
-
-                    <span class="section-label">
-                        RECURSOS
-                    </span>
-
-                    <h2>
-                        Menos complicação.
-                        <span>Mais colaboração.</span>
-                    </h2>
-
-                    <p>
-                        O Tasks Colaborativas foi pensado para deixar o
-                        gerenciamento de atividades mais simples e visual.
-                    </p>
-
-
-                    <ul class="feature-list">
-
-                        <li>
-                            <span>✓</span>
-                            <div>
-                                <strong>Visualização das tarefas</strong>
-                                <p>
-                                    Saiba rapidamente o que precisa ser feito.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <span>✓</span>
-                            <div>
-                                <strong>Organização por status</strong>
-                                <p>
-                                    Acompanhe tarefas a fazer, em andamento
-                                    e concluídas.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <span>✓</span>
-                            <div>
-                                <strong>Trabalho colaborativo</strong>
-                                <p>
-                                    Mantenha sua equipe trabalhando em sintonia.
-                                </p>
-                            </div>
-                        </li>
-
-                    </ul>
-
+        <section class="section features-section" id="recursos">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-label">RECURSOS</span>
+                    <h2>Menos complicação. <span>Mais colaboração.</span></h2>
+                    <p>O Tasks Colaborativas foi pensado para deixar o gerenciamento de atividades mais simples e visual.</p>
                 </div>
 
-
-                <div class="features-visual">
-
-                    <div class="stats-card">
-
-                        <div class="stats-header">
-                            <div>
-                                <small>Atividades da equipe</small>
-                                <h3>Esta semana</h3>
-                            </div>
-
-                            <span class="stats-menu">•••</span>
+                <div class="features-list-wrapper">
+                    <div class="feature-box">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <h4>Gestão Visual Intuitiva</h4>
+                            <p>Acompanhe o andamento de cada etapa do projeto sem poluição visual ou excesso de cliques.</p>
                         </div>
-
-
-                        <div class="chart">
-
-                            <div class="chart-line">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-
-                            <div class="chart-days">
-                                <span>Seg</span>
-                                <span>Ter</span>
-                                <span>Qua</span>
-                                <span>Qui</span>
-                                <span>Sex</span>
-                                <span>Sáb</span>
-                                <span>Dom</span>
-                            </div>
-
-                        </div>
-
-
-                        <div class="stats-bottom">
-
-                            <div>
-                                <strong>24</strong>
-                                <span>Tarefas concluídas</span>
-                            </div>
-
-                            <div>
-                                <strong>8</strong>
-                                <span>Em andamento</span>
-                            </div>
-
-                            <div>
-                                <strong>92%</strong>
-                                <span>Produtividade</span>
-                            </div>
-
-                        </div>
-
                     </div>
-
+                    <div class="feature-box">
+                        <span class="feature-check">✓</span>
+                        <div>
+                            <h4>Foco em Prioridades</h4>
+                            <p>Defina o que é urgente e mantenha o time alinhado nas entregas que realmente importam.</p>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- ================= COMO FUNCIONA ================= -->
-
-        <section class="how-it-works" id="como-funciona">
-
+        <section class="section workflow-section" id="como-funciona">
             <div class="container">
-
                 <div class="section-heading">
-
-                    <span class="section-label">
-                        COMO FUNCIONA
-                    </span>
-
-                    <h2>
-                        Simples do começo ao fim.
-                    </h2>
-
-                    <p>
-                        Organizar o trabalho da sua equipe não precisa ser complicado.
-                    </p>
-
+                    <span class="section-label">COMO FUNCIONA</span>
+                    <h2>Simples do começo ao fim.</h2>
+                    <p>Organizar o trabalho da sua equipe não precisa ser complicado.</p>
                 </div>
 
-
-                <div class="steps">
-
-                    <div class="step">
-
-                        <div class="step-number">
-                            01
-                        </div>
-
-                        <div class="step-line"></div>
-
+                <div class="grid-3">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
                         <h3>Crie</h3>
-
-                        <p>
-                            Cadastre as tarefas que precisam ser realizadas
-                            pela equipe.
-                        </p>
-
+                        <p>Cadastre as tarefas que precisam ser realizadas pela equipe de forma ágil.</p>
                     </div>
 
-
-                    <div class="step">
-
-                        <div class="step-number">
-                            02
-                        </div>
-
-                        <div class="step-line"></div>
-
+                    <div class="step-card">
+                        <div class="step-number">02</div>
                         <h3>Organize</h3>
-
-                        <p>
-                            Distribua as atividades e acompanhe cada etapa
-                            do projeto.
-                        </p>
-
+                        <p>Distribua as atividades entre os membros e acompanhe cada etapa do projeto.</p>
                     </div>
 
-
-                    <div class="step">
-
-                        <div class="step-number">
-                            03
-                        </div>
-
+                    <div class="step-card">
+                        <div class="step-number">03</div>
                         <h3>Conclua</h3>
-
-                        <p>
-                            Finalize as tarefas e veja o progresso da equipe
-                            em tempo real.
-                        </p>
-
+                        <p>Finalize as tarefas e comemore o progresso da equipe em tempo real.</p>
                     </div>
-
                 </div>
-
             </div>
-
         </section>
 
-
         <!-- ================= CTA ================= -->
-
-        <section class="cta">
-
+        <section class="cta-section">
             <div class="cta-decoration decoration-one"></div>
             <div class="cta-decoration decoration-two"></div>
-
-            <div class="container cta-content">
-
+            <div class="container cta-container">
                 <span class="cta-icon">✓</span>
-
-                <h2>
-                    Pronto para organizar
-                    <span>seu trabalho?</span>
-                </h2>
-
-                <p>
-                    Acesse o Tasks Colaborativas e comece a trabalhar
-                    de forma mais organizada com sua equipe.
-                </p>
-
-                <a
-                    href="https://tasks-colaborativas.onrender.com/home/tasks"
-                    class="btn btn-white"
-                >
-                    Acessar o aplicativo
-                    <span>→</span>
+                <h2>Pronto para organizar <span>seu trabalho?</span></h2>
+                <p>Acesse o Tasks Colaborativas e comece a trabalhar de forma mais organizada com sua equipe.</p>
+                <a href="https://tasks-colaborativas.onrender.com/home/tasks" class="btn btn-white">
+                    Acessar o aplicativo <span>→</span>
                 </a>
-
             </div>
-
         </section>
 
     </main>
 
-
     <!-- ================= FOOTER ================= -->
-
     <footer class="footer">
-
-        <div class="container footer-content">
-
+        <div class="container footer-grid">
             <div class="footer-brand">
-
                 <a href="#" class="logo">
                     <span class="logo-icon">✓</span>
                     <span>Tasks<span class="logo-highlight">Colaborativas</span></span>
                 </a>
-
-                <p>
-                    Organização e colaboração para equipes que querem
-                    fazer mais.
-                </p>
-
+                <p>Organização e colaboração para equipes que querem fazer mais.</p>
             </div>
 
-
-            <div class="footer-links">
-
-                <div>
+            <div class="footer-links-group">
+                <div class="footer-col">
                     <h4>Produto</h4>
                     <a href="#recursos">Recursos</a>
                     <a href="#como-funciona">Como funciona</a>
                     <a href="#beneficios">Benefícios</a>
                 </div>
-
-                <div>
+                <div class="footer-col">
                     <h4>Acesso</h4>
-                    <a href="https://tasks-colaborativas.onrender.com/home/tasks">
-                        Entrar
-                    </a>
-                    <a href="https://tasks-colaborativas.onrender.com/home/tasks">
-                        Começar agora
-                    </a>
+                    <a href="https://tasks-colaborativas.onrender.com/home/tasks">Entrar</a>
+                    <a href="https://tasks-colaborativas.onrender.com/home/tasks">Começar agora</a>
                 </div>
-
             </div>
-
         </div>
-
 
         <div class="container footer-bottom">
-
-            <span>
-                © 2026 Tasks Colaborativas.
-            </span>
-
-            <span>
-                Projeto desenvolvido para fins acadêmicos.
-            </span>
-
+            <span>© 2026 Tasks Colaborativas.</span>
+            <span>Projeto desenvolvido para fins acadêmicos.</span>
         </div>
-
     </footer>
 
 </body>
