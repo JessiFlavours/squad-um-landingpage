@@ -85,14 +85,6 @@ tarefas
 
 ---
 
-## Endpoints
-
-A documentação interativa completa está disponível via Swagger UI em:
-
-```
-http://localhost/mvc/docs
-```
-
 ### Autenticação
 
 | Método | Rota | Descrição | Auth |
@@ -237,11 +229,6 @@ php migrate.php
 **6. Configure o Apache:**
 
 Certifique-se de que o `mod_rewrite` está habilitado e que `AllowOverride All` está configurado para o diretório do projeto. O arquivo `.htaccess` já está incluído no repositório.
-
-**7. Acesse:**
-```
-http://localhost/mvc/
-```
 
 ### Estrutura do Projeto
 

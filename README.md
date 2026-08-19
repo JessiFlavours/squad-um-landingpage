@@ -11,14 +11,14 @@ Projeto desenvolvido pela Squad 1 durante o Bootcamp de DevOps da Atlântico Ava
 
 ## Arquitetura e Tecnologias
 
-* Aplicação: PHP (Apache) com MySQL
-* Controle de Versão: Git & GitHub
-* Conteinerização: Docker & Docker Compose
-* Infraestrutura como Código (IaC): Terraform
-* Banco de Dados Gerenciado: Aiven (MySQL Service)
-* Plataforma de Hospedagem / PaaS: Render
-* Integração e Entrega Contínua (CI/CD): GitHub Actions
-
+* **Aplicação Backend:** PHP (Apache) com MySQL
+* **Landing Page:** HTML5, CSS3 e JavaScript
+* **Controle de Versão:** Git & GitHub
+* **Conteinerização:** Docker & Docker Compose
+* **Infraestrutura como Código (IaC):** Terraform
+* **Banco de Dados Gerenciado:** Aiven (MySQL Service)
+* **Plataforma de Hospedagem:** Render (API) & Netlify (Landing Page)
+* **Integração e Entrega Contínua (CI/CD):** GitHub Actions
 ---
 
 ## Estrutura do Repositório
@@ -33,14 +33,17 @@ flowchart TD
     
     root --> app["app/"]
     app --> src["Código-fonte da aplicação"]
+
+    root --> landing["landing/"]
+    landing --> public["public/"]
     
     root --> terraform["terraform/"]
-    terraform --> main["main.tf"]
     terraform --> variables["variables.tf"]
     terraform --> outputs["outputs.tf"]
     terraform --> provider["provider.tf"]
+    provider --> aiven["aiven.tf"]
+    provider --> render["render.tf"]
     
-    root --> dockerfile["Dockerfile"]
     root --> compose["docker-compose.yml"]
     root --> readme["README.md"]
 ```
@@ -72,8 +75,8 @@ flowchart TD
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/JessiFlavours/squad-um-landingpage.git
-cd squad-um-landingpage
+git clone https://github.com/JessiFlavours/tasks-colaborativas-demoday.git
+cd tasks-colaborativas-demoday
 ```
 
 3. Suba o ambiente de desenvolvimento:
@@ -87,7 +90,7 @@ docker compose up -d --build
 
 ## Infraestrutura como Código (Terraform)
 
-O diretório terraform/ gerencia o banco de dados MySQL hospedado na plataforma Aiven.
+O diretório terraform/ automatiza toda a infraestrutura do projeto: provisiona a instância gerenciada do MySQL na Aiven e realiza o deploy do container da aplicação na plataforma Render.
 
 1. Acesse o diretório de infraestrutura:
 ```bash
