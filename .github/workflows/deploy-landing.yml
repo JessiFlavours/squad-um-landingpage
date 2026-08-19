@@ -14,4 +14,4 @@ jobs:
 
       - name: Deploy to Netlify
         run: |
-          npx netlify-cli deploy --dir=./landing --prod --auth="${{ secrets.NETLIFY_AUTH_TOKEN }}" --site="${{ secrets.NETLIFY_SITE_ID }}"
+          npx netlify-cli deploy --dir=./landing/public --prod --auth="${{ secrets.NETLIFY_AUTH_TOKEN }}" --site="${{ secrets.NETLIFY_SITE_ID }}"
