@@ -14,6 +14,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Substituir PUBLIC_APP_URL no HTML
+        env:
+          PUBLIC_APP_URL: ${{ secrets.PUBLIC_APP_URL }}
+        run: |
+          sed -i "s|PUBLIC_APP_URL|${PUBLIC_APP_URL}|g" ./landing/public/index.html
+
       - name: Deploy to Netlify
         run: |
           npx netlify-cli deploy --dir=./landing/public --prod --auth="${{ secrets.NETLIFY_AUTH_TOKEN }}" --site="${{ secrets.NETLIFY_SITE_ID }}"
